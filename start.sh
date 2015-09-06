@@ -24,7 +24,7 @@ fi
 
 # Look for any files in share dir, encrypt then upload.
 while true; do
-  find ${SHARE_DIR} -name "${FILE_NAME}" | while read LINE; do
+  find ${BACKUP_DIR} -name "${FILE_NAME}" | while read LINE; do
     gpg --recipient "${GPG_UID}" --encrypt "${LINE}"
     rm -f ${LINE:?}
     aws s3 cp --region ${AWS_REGION} "${LINE}" "s3://${AWS_BUCKET}/$(basename ${LINE}).gpg"
