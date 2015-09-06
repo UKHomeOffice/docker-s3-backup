@@ -27,8 +27,8 @@ while true; do
   find ${SHARE_DIR} -name "${FILE_NAME}" | while read LINE; do
     gpg --recipient "${GPG_UID}" --encrypt "${LINE}"
     rm -f ${LINE:?}
-    aws s3 cp --region ${AWS_REGION} "${LINE}" "s3://${AWS_BACKUP_BUCKET}/${LINE}.gpg"
-    rm -f ${LINE:?}.gpg
+    aws s3 cp --region ${AWS_REGION} "${LINE}" "s3://${AWS_BUCKET}/$(basename ${LINE}).gpg"
+    rm -f "${LINE:?}.gpg"
     echo "UPLOADED: ${LINE}"
   done;
   sleep 10;
