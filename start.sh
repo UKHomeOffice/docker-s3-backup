@@ -1,7 +1,9 @@
 #!/bin/bash -e
 
-# Make sure share exists; only useful for testing.
-mkdir -p ${SHARE_DIR}
+# Make sure share dir exists
+if [ ! -d "$SHARE_DIR" ]; then
+  mkdir -p ${SHARE_DIR}
+fi
 
 # Setup GPG key and trust.
 if [ ${GPG_PUBLIC_KEY:+1} ]; then
