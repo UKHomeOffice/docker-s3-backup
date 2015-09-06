@@ -37,7 +37,7 @@ cEks2btCMFTT1Px+PFo5wFWGrhyIhHuX1p/IPudXmA==\n\
 =x05x\n-----END PGP PUBLIC KEY BLOCK-----"
 ENV GPG_PRIVATE_KEY "n/a"
 
-ENV SHARE_DIR /var/backup/share
+ENV SHARE_DIR /var/backups/share
 ENV FILE_NAME "*.tar.gz"
 
 # Install GPG and AWSCLI
