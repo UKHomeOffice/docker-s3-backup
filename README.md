@@ -1,5 +1,6 @@
 # docker-archive
 
+[![Build Status](https://travis-ci.org/UKHomeOffice/docker-archive.svg?branch=master)](https://travis-ci.org/UKHomeOffice/docker-archive)
 
 So this is how we do backups.
 
